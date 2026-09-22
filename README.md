@@ -34,3 +34,43 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# BLC 2.0 — Registration & Payment System
+
+A Next.js 16 registration and payment portal for the **Business & Leadership Conference (BLC) 2.0**.
+
+Handles ticket selection, Paystack checkout, admin notifications via Brevo, and automatic recovery of missed payments via cron.
+
+Live site: [theblc.wuaze.com](https://theblc.wuaze.com/?i=1#tickets)
+
+---
+
+## ✨ Features
+
+- **Two ticket tiers** — General Admission & Student
+- **Automatic early-bird pricing** — switches to regular on Oct 22, 2026
+- **Dynamic processing fee** — GHS 1.00 (≤75) or GHS 1.50 (>75)
+- **Paystack checkout** — card, mobile money, bank transfer, USSD
+- **Admin email notifications** via Brevo (to `theblcglobal@gmail.com`)
+- **Cron job** — catches payments where the customer closed the browser early
+- **Success page** with live payment verification + retry logic
+- **Deployed on Vercel** (Hobby free tier)
+- **No changes required to other Paystack projects** (BBQ etc.)
+
+---
+
+## 🧱 Tech Stack
+
+| Layer | Tech |
+|---|---|
+| Framework | Next.js 16 (App Router, Turbopack) |
+| Language | TypeScript |
+| Styling | Tailwind CSS |
+| Payments | Paystack |
+| Email | Brevo |
+| Hosting | Vercel |
+| Cron | Vercel Cron Jobs |
+| State (temporary) | In-memory Map (⚠️ see [Future Work](#-future-work)) |
+
+---
+
+## 📁 Project Structure
